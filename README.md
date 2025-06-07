@@ -15,7 +15,7 @@ Objetivo: Conocer e implementar estructuras de datos tipo árbol binario para mo
 
 Enlace a video explicativo:
 
-
+https://youtu.be/9MW5o3x5MTY
 
 
 

@@ -7,6 +7,7 @@
     Materia: Programación 1
     Carrera: Tecnicatura Universitaria en Programación
     Tema: Árboles Binarios
+    Módulo: Creación y recorrido de un árbol binario
     Integrantes:
     - Nombre 1: Manuel Galarza
     - Nombre 2: Gabriel Etchegoyen
@@ -48,21 +49,23 @@ def mostrar_arbol(arbol, nivel=0):
         print('    ' * nivel + str(arbol[0]))
         mostrar_arbol(arbol[1], nivel + 1)
 
-# Crear un árbol binario de ejemplo
+# Jerarquia en el árbol
+def imprimir_jerarquia_nivel(arbol):
+    from collections import deque
+    if not arbol:
+        return
+    cola = deque()
+    cola.append(arbol)
+    while cola:
+        nivel = len(cola)
+        linea = []
+        for _ in range(nivel):
+            nodo = cola.popleft()
+            if nodo:
+                linea.append(str(nodo[0]))
+                cola.append(nodo[1])
+                cola.append(nodo[2])
+        if linea:
+            print("  ".join(linea))
 
-arbol = crear_nodo('A', crear_nodo('B', crear_nodo('D'), crear_nodo('E')), crear_nodo('C', None, crear_nodo('F')))
-
-# Mostrar visualización del árbol
-print("Árbol binario:")
-mostrar_arbol(arbol)
-
-# Recorridos
-print("\nRecorrido inorden:")
-inorden(arbol)
-
-print("\nRecorrido preorden:")
-preorden(arbol)
-
-print("\nRecorrido postorden:")
-postorden(arbol)
 

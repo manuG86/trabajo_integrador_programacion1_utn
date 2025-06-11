@@ -19,7 +19,6 @@
 from arbol import crear_nodo, inorden, preorden, postorden, mostrar_arbol, imprimir_jerarquia_nivel
 
 
-
 if __name__ == "__main__":
     # Ejecutar el caso de uso
     # Crear un árbol binario de ejemplo
